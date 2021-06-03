@@ -1,0 +1,45 @@
+.menu-1 {
+	font-family: Arial;
+}
+.menu-1__button {
+	display: none;
+}
+.menu-1__link, .menu-1__link:hover {
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: #000000;
+}
+.menu-1__link:hover {
+	background: #F7F7F7;
+}
+.menu-1__button, .menu-1__link, .menu-1__link:hover {
+	padding: 20px 8px;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+
+
+@media (min-width: 576px) {
+	.menu-1 {
+		margin-left: -5px;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.menu-1__button {
+		display: block;
+		cursor: pointer;
+		font-weight: bold;
+	}
+	.menu-1__link {
+		display: none;
+	}
+	.menu-1__link, .menu-1__link:hover {
+		float: none;
+	}
+	.menu-1__link:hover {
+		background: #EEEEEE;
+	}
+} // sm и ниже

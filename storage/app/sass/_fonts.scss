@@ -1,0 +1,23 @@
+/*
+// font-family: 'Roboto Slab', serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&subset=cyrillic');
+$font-family-base: 'Roboto Slab', serif; // Выдается в Google Fonts
+
+// font-family: 'Open Sans Condensed', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=cyrillic');
+$headings-font-family: 'Open Sans Condensed', sans-serif; // Выдается в Google Fonts
+
+body {
+	font-family: $font-family-base;
+}
+h1, h2, h3, h4 {
+	font-family: $headings-font-family;
+}
+*/
+
+body {
+	font-family: Arial;
+}
+h1, h2, h3, h4 {
+	font-family: Arial;
+}

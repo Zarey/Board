@@ -1,0 +1,54 @@
+/* link */
+main a, main a:visited, main a:hover {
+	text-decoration: none;
+	color: #009eb7;
+
+}
+main a:hover {
+	color: #FF0000;
+}
+
+h2 {
+	font-size: 19px;
+}
+
+/* forms */
+
+main input, main textarea, main label, main select {
+	border-radius: 3px;
+}
+
+main input, main textarea, main select {
+	width: 100%;
+	border: 1px solid #CCCCCC;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+main label {
+	display: inline-block;
+	background: #009eb7;
+	color: #FFFFFF;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.alert {
+	padding: 10px;
+	border-radius: 3px;
+	border: 1px solid #009eb7;
+	color: #000000;
+	background: #009eb75e;
+	font-size: 15px;
+	font-weight: 300;
+	margin-bottom: 5px;
+}
+.alert a {
+	color: black !important;
+	font-weight: bold;
+	border-bottom: 1px dotted red;
+}
+
+form {
+	margin: 0;
+}

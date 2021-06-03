@@ -1,0 +1,23 @@
+
+$custom-colors: (
+  'blue': #009eb7,
+  'white': #FFFFFF,
+  'black': #000000,
+  'light-gray': #F7F7F7,
+  );
+
+@each $name, $value in $custom-colors {
+  .bg-#{$name} {
+    background: $value;
+  }
+  .text-#{$name},
+  .text-hover-#{$name}:hover,
+  .links-#{$name} a,
+  .links-#{$name} a:visited,
+  .links-hover-#{$name} a:hover {
+   color: $value;
+ }
+ .border-#{$name} {
+   border-color: $value;
+ }
+}

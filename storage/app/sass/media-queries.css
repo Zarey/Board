@@ -1,0 +1,33 @@
+
+// Без привязки к BS. Удобно и для "Custom CSS & JS"
+
+///////////////////////////////////////////
+
+// Минимальшая ширина
+
+// xs и выше (не требует медиазапроса) (min-width: 0)
+@media (min-width: 576px) { } // sm и выше
+@media (min-width: 768px) { } // md и выше
+@media (min-width: 992px) { } // lg и выше
+@media (min-width: 1200px) { } // xl и выше
+@media (min-width: 1400px) { } // xxl и выше
+
+///////////////////////////////////////////
+
+// Максимальная ширина
+
+@media (max-width: 575.98px) { } // xs и ниже
+@media (max-width: 767.98px) { } // sm и ниже
+@media (max-width: 991.98px) { } // md и ниже
+@media (max-width: 1199.98px) { } // lg и ниже
+@media (max-width: 1399.98px) { } // xl и ниже
+// xxl и ниже (не требует медиазапроса)
+
+///////////////////////////////////////////
+
+@media (max-width: 575.98px) { } // Только xs = xs и ниже
+@media (min-width: 576px) and (max-width: 767.98px) { } // Только sm
+@media (min-width: 768px) and (max-width: 991.98px) { } // Только md
+@media (min-width: 992px) and (max-width: 1199.98px) { } // Только lg
+@media (min-width: 1200px) and (max-width: 1399.98px) { } // Только xl
+@media (min-width: 1400px) { } // Только xxl = xxl и выше

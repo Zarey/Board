@@ -1,0 +1,13 @@
+.frontend-header {
+	padding: 30px 0;
+}
+.frontend-header h1 {
+	font-size: 3vw;
+}
+
+@media (max-width: 575.98px) {
+	.frontend-header h1 {
+		text-align: center;
+		font-size: 5vw;
+	}
+}

@@ -32,7 +32,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->description = $request->description;
         if ($category->save())
-            return true;
+            return $category->id;
 
         return false;
     }
@@ -71,7 +71,7 @@ class CategoryController extends Controller
         if ($category) {
             $category->on_off = 1;
             if ($category->save())
-                return true;
+                return $category->id;
         }
     }
 
@@ -82,7 +82,7 @@ class CategoryController extends Controller
         if ($category) {
             $category->on_off = 0;
             if ($category->save())
-                return true;
+                return $category->id;
         }
     }
 }

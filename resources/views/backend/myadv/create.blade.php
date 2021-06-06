@@ -13,12 +13,12 @@
 <textarea rows="7" name="draft_advcontent" maxlength="2000" placeholder="Текст объявления" required>{{ old('draft_advcontent') }}</textarea><br />
 <select name="draft_category_id" required>
 <option value=''>Выберите категорию</option>
-<?php foreach ($categories as $category) { ?>
-	<option value="<?= $category->id ?>" <?= $category->id == old('draft_category_id') ? 'selected' : '' ?>><?= $category->name ?> - <?= $category->description ?></option>
-<?php } ?>
+@foreach ($categories as $category)
+	<option value="{{ $category->id }}" {{ $category->id == old('draft_category_id') ? 'selected' : '' }}>{{ $category->name }} - {{ $category->description }}</option>
+@endforeach
 </select>
-<input type="text" name="draft_city" maxlength="50" value="<?= old('draft_city') ? old('draft_city') : $user->city ?>" placeholder="Город, район" required><br />
-<input type="text" name="draft_phone" maxlength="25" value="<?= old('draft_phone') ? old('draft_phone') : $user->phone ?>" placeholder="Телефон для связи" required><br />
+<input type="text" name="draft_city" maxlength="50" value="{{ old('draft_city') ? old('draft_city') : $user->city }}" placeholder="Город, район" required><br />
+<input type="text" name="draft_phone" maxlength="25" value="{{ old('draft_phone') ? old('draft_phone') : $user->phone }}" placeholder="Телефон для связи" required><br />
 <input type="text" name="price" value="{{ old('price') }}" maxlength="8" onkeyup="isNum(this)" autocomplete="off" placeholder="Цена в рублях"><br />
 <input type="file" name="image" accept=".jpg, .png, .jpeg, .gif" placeholder="Выберите изображение"><br />
 <input type="submit" id="create" value="Создать" style="display: none;"  />

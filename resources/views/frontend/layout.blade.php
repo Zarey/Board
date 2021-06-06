@@ -13,8 +13,8 @@
         <meta name="description" content="{{ $description }}" />
         @endif
 
-        <link rel="icon" href="<?php echo e(asset('storage/favicon-32x32.png')); ?>" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="<?php echo e(asset('storage/favicon-114x114.png')); ?>" type="image/png" sizes="114x114" />
+        <link rel="icon" href="{{ e(asset('storage/favicon-32x32.png')) }}" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="{{ e(asset('storage/favicon-114x114.png')) }}" type="image/png" sizes="114x114" />
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('storage/css/style.css') }}?v=1">
@@ -25,17 +25,18 @@
 <div class="container-resp">
 <div class="menu-1">
 <span class="menu-1__button">МЕНЮ</span>
-<a href="<?php echo url('/'); ?>" class="menu-1__link">Главная</a>
-<?php if (Auth::check()) { ?>
-<a href="<?php echo url('/myadv'); ?>" class="menu-1__link">Личный кабинет</a>
-<a href="<?php echo url('/myadv/create'); ?>" class="menu-1__link">Добавить объявление</a>
-<?php } ?>
-<?php if (Auth::check()) { ?>
-<a href="<?php echo url('/logout'); ?>" class="menu-1__link">Выйти</a>
-<?php } else { ?>
-<a href="<?php echo url('/login'); ?>" class="menu-1__link">Войти</a>
-<a href="<?php echo url('/register'); ?>" class="menu-1__link">Зарегистрироваться</a>
-<?php } ?>
+<a href="{{ url('/') }}" class="menu-1__link">Главная</a>
+@if (Auth::check())
+<a href="{{ url('/myadv') }}" class="menu-1__link">Личный кабинет</a>
+<a href="{{ url('/myadv/create') }}" class="menu-1__link">Добавить объявление</a>
+@endif
+
+@if (Auth::check())
+<a href="{{ url('/logout') }}" class="menu-1__link">Выйти</a>
+@else
+<a href="{{ url('/login') }}" class="menu-1__link">Войти</a>
+<a href="{{ url('/register') }}" class="menu-1__link">Зарегистрироваться</a>
+@endif
 </div>
 </div>
 </nav>

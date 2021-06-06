@@ -32,26 +32,26 @@
 <div class="container-resp">
 <div class="menu-1">
 <span class="menu-1__button">МЕНЮ</span>
-<a href="<?php echo url('/'); ?>" class="menu-1__link">Главная</a>
-<?php if (Auth::id() == 1) { ?>
-<a href="<?php echo url('/moderate'); ?>" class="menu-1__link">Ждут одобрения</a>
- <a href="<?php echo url('/moderate/approved'); ?>" class="menu-1__link">Одобренные</a>
- <a href="<?php echo url('/moderate/rejected'); ?>" class="menu-1__link">Отклоненные</a>
- <a href="<?php echo url('/category'); ?>" class="menu-1__link">Категории</a>
-<?php } ?>
+<a href="{{ url('/') }}" class="menu-1__link">Главная</a>
+@if (Auth::id() == 1)
+<a href="{{ url('/moderate') }}" class="menu-1__link">Ждут одобрения</a>
+ <a href="{{ url('/moderate/approved') }}" class="menu-1__link">Одобренные</a>
+ <a href="{{ url('/moderate/rejected') }}" class="menu-1__link">Отклоненные</a>
+ <a href="{{ url('/category') }}" class="menu-1__link">Категории</a>
+@endif
 
-<?php if (Auth::id()) { ?>
-<a href="<?php echo url('/myadv'); ?>" class="menu-1__link">Мои объявления</a>
-<a href="<?php echo url('/myadv/create'); ?>" class="menu-1__link">Добавить новое</a> 
-<a href="<?php echo route('card.edit', Auth::id()); ?>" class="menu-1__link">Контакты для объявлений</a>
-<?php } ?> 
+@if (Auth::id())
+<a href="{{ url('/myadv') }}" class="menu-1__link">Мои объявления</a>
+<a href="{{ url('/myadv/create') }}" class="menu-1__link">Добавить новое</a> 
+<a href="{{ route('card.edit', Auth::id()) }}" class="menu-1__link">Контакты для объявлений</a>
+@endif
 
-<?php if (Auth::check()) { ?>
-<a href="<?php echo url('/logout'); ?>" class="menu-1__link">Выйти</a>
-<?php } else { ?>
-<a href="<?php echo url('/login'); ?>" class="menu-1__link">Войти</a>
-<a href="<?php echo url('/register'); ?>" class="menu-1__link">Зарегистрироваться</a>
-<?php } ?>
+@if (Auth::check())
+<a href="{{ url('/logout') }}" class="menu-1__link">Выйти</a>
+@else
+<a href="{{ url('/login') }}" class="menu-1__link">Войти</a>
+<a href="{{ url('/register') }}" class="menu-1__link">Зарегистрироваться</a>
+@endif
 </div>
 </div>
 </nav>

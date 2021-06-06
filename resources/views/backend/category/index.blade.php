@@ -9,10 +9,9 @@
 
 <div class="container-resp pt-20">
 <h2>{{ $title }}</h2>
-<pre><?php // var_dump($categories) ?></pre>
 <div id="categoriesList">
-<?php foreach ($categories as $category) { ?>
-<section class="res-element <?php if ($category->on_off) echo 'status-on'; ?>" id="category-id-{{$category->id}}">
+@foreach ($categories as $category)
+<section class="res-element @if ($category->on_off) 'status-on' @endif" id="category-id-{{$category->id}}">
 <input type="text" id="category-name-{{$category->id}}" placeholder="Название категории" value="{{$category->name}}">
 <input type="text" id="category-descpiption-{{$category->id}}" placeholder="Описание категории" value="{{$category->description}}">
 <div id="category-alert-{{$category->id}}"></div>
@@ -21,7 +20,7 @@
 <label onclick="off({{$category->id}})">Выключить</label>
 <label for="" onclick="if(confirm('Удалить безвозвратно?')){destroy({{$category->id}})}">Удалить</label>
 </section>
-<?php } ?>
+@endforeach
 </div>
 
 <section class="res-element bg-white">
@@ -40,7 +39,7 @@
 
 window.onload = function() {
 
-  let baseUrl = "<?php echo url('/category'); ?>";
+  let baseUrl = "{{ url('/category') }}";
   let categoriesList = document.getElementById('categoriesList');
 
   // Создание новой категории

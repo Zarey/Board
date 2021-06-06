@@ -6,36 +6,36 @@
 
 <section class="res-element bg-white">
 
-<?php if ($advertisement->status !== 2) { ?>
+@if ($advertisement->status !== 2)
 Черновик для утверждения:<br />
-Заголовок: <?= $advertisement->draft_header ?><br />
-Сообщение:<br /> <?= $advertisement->draft_advcontent ?><br />
-Категория: <?= isset($draft_category->name) ? $draft_category->name : '' ?><br />
-Город: <?= $advertisement->draft_city ?><br />
-Телефон: <?= $advertisement->draft_phone ?><br />
-<?php if ($advertisement->draft_image) { ?>
-<img src="<?= asset('storage/images/preview/'.$advertisement->draft_image); ?>" class="mb-10" />
-<?php } ?>
+Заголовок: {{ $advertisement->draft_header }}<br />
+Сообщение:<br /> {{ $advertisement->draft_advcontent }}<br />
+Категория: {{ isset($draft_category->name) ? $draft_category->name : '' }}<br />
+Город: {{ $advertisement->draft_city }}<br />
+Телефон: {{ $advertisement->draft_phone }}<br />
+@if ($advertisement->draft_image)
+<img src="{{ asset('storage/images/preview/'.$advertisement->draft_image) }}" class="mb-10" />
+@endif
 <hr />
-<?php } ?>
+@endif
 
-<?php if ($advertisement->status !== 0) { ?>
+@if ($advertisement->status !== 0)
 @if ($advertisement->status === 2)
 Показывается версия:
 @else
 Одобренная ранее версия:
 @endif
 <br />
-Заголовок: <?= $advertisement->header ?><br />
-Сообщение:<br /> <?= nl2br($advertisement->advcontent) ?><br />
-Категория: <?= isset($category->name) ? $category->name : '' ?><br />
-Город: <?= $advertisement->city ?><br />
-Телефон: <?= $advertisement->phone ?><br />
-Адрес: <?= $advertisement->url ?><br />
-<?php if ($advertisement->image) { ?>
-<img src="<?= asset('storage/images/preview/'.$advertisement->image); ?>" class="mb-10" />
-<?php } ?>
-<?php } ?>
+Заголовок: {{ $advertisement->header }}<br />
+Сообщение:<br /> {{ nl2br($advertisement->advcontent) }}<br />
+Категория: {{ isset($category->name) ? $category->name : '' }}<br />
+Город: {{ $advertisement->city }}<br />
+Телефон: {{ $advertisement->phone }}<br />
+Адрес: {{ $advertisement->url }}<br />
+@if ($advertisement->image)
+<img src="{{ asset('storage/images/preview/'.$advertisement->image) }}" class="mb-10" />
+@endif
+@endif
 
 
 
@@ -69,19 +69,19 @@
 <label for="approve">Одобрить</label> 
 <label for="reject">Отклонить</label>
 <br /><br />
-<a href="<?php echo url('/myadv/'.$advertisement->id.'/edit/'); ?>">Редактировать, как автор</a>
+<a href="{{ url('/myadv/'.$advertisement->id.'/edit/') }}">Редактировать, как автор</a>
 
 </section>
 
 <section class="res-element bg-white">
 Поднято:
-<?= $advertisement->up_adv ?>
+{{ $advertisement->up_adv }}
 <br />
 Обновлено:
-<?= $advertisement->updated_at ?>
+{{ $advertisement->updated_at }}
 <br />
 Создано:
-<?= $advertisement->created_at ?>
+{{ $advertisement->created_at }}
 <br />
 Статус:
 @if ($advertisement->status === 0)
